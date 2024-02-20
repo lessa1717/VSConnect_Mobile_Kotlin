@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@+id/nav_propagandas">
+
+    <fragment
+            android:id="@+id/nav_informacoes_propaganda"
+            android:name="com.senai.vsconnect_kotlin.views.InformacoesPropagandaFragment"
+            android:label="@string/menu_informacoes_propaganda"
+            tools:layout="@layout/fragment_informacoes_propaganda">
+
+        <action
+                android:id="@+id/action_nav_informacoes_propaganda_to_nav_propagandas"
+                app:destination="@id/nav_propagandas"/>
+
+        <action
+                android:id="@+id/action_nav_informacoes_propaganda_to_nav_sair"
+                app:destination="@+id/nav_sair"
+        />
+
+    </fragment>
+
+    <fragment
+            android:id="@+id/nav_propagandas"
+            android:name="com.senai.vsconnect_kotlin.views.ListaPropagandasFragment"
+            android:label="@string/menu_lista_propagandas"
+            tools:layout="@layout/fragment_lista_propagandas">
+
+        <action
+                android:id="@+id/action_nav_propagandas_to_nav_informacoes_propaganda"
+                app:destination="@id/nav_informacoes_propaganda"/>
+
+        <action
+                android:id="@+id/action_nav_propagandas_to_nav_sair"
+                app:destination="@+id/nav_sair"
+        />
+
+    </fragment>
+
+</navigation>
